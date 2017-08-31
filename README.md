@@ -13,9 +13,21 @@ Port 80 is exposed and can be mapped with
 docker run docker run --name r43ples -p 8080:80 -it r43ples  
 ```
 
-A data directory containing a `r43ples.conf` and the graphfile can be mounted with
+The store will be initalized with graph http://example.org/ under revision control.
+You can change the URI with use of variable GRAPH_URI like this:
 ```
-docker run docker run --name r43ples -v /your/directory:/var/r43ples/data  -it r43ples  
+docker run docker run --name r43ples -e GRAPH_URI=http://other.graph.uri/ -it r43ples  
+```
+
+
+## Mount volumes
+A conf directory containing a `r43ples.conf` can be overwritten by
+```
+docker run docker run --name r43ples -v /your/conf/directory:/var/r43ples/conf  -it r43ples  
+```
+A data directory containing a N-Triples or N-Quads files can be overwritten by
+```
+docker run docker run --name r43ples -v /your/data/directory:/var/r43ples/data  -it r43ples  
 ```
 
 ## Examples queries
