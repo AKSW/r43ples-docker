@@ -11,6 +11,7 @@ RUN mvn package -DskipTests
 RUN wget http://archive.apache.org/dist/jena/binaries/apache-jena-2.7.4.tar.gz && \
   tar -xf apache-jena-2.7.4.tar.gz
 
+RUN mkdir -p /var/r43ples/database/dataset
 ADD run.sh .
 COPY conf/r43ples.conf conf/r43ples.conf
 
