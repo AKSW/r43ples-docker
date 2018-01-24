@@ -1,7 +1,5 @@
 FROM maven:3.5-jdk-7
 
-ENV GRAPH_URI http://example.org/
-
 RUN git clone -b develop https://github.com/plt-tud/r43ples.git /var/r43ples
 
 WORKDIR /var/r43ples
